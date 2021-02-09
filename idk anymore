@@ -1,0 +1,42 @@
+#include <PRIZM.h>      // Include the PRIZM library from Tetrix
+
+PRIZM prizm;            // Instantiate a PRIZM object "prizm" so we can use its functions
+
+void setup() {          // run this code once
+prizm.PrizmBegin();   // initialize the PRIZM controller
+}
+int mappedValue = 0;
+int distance = 0;
+
+void loop() {     // repeat this code in a loop
+ distance = prizim.readSonicSensorCM (1);
+  if (distance < 5) {
+    DangerLighr=t();
+    ResetServo();
+  }
+  else if (distance > 5 & distance < 43) {
+  MoveServo (distance)
+  }
+  else {
+    prizm.setGreenLED(1);
+    delay (200) ;
+  }
+  
+}
+
+// funtions 
+void DangerLight (){
+  prizm. setRedLED (1)
+  delay(400);
+  prizm.setRedLED(0);
+}
+
+void ResetServo ();{
+  prizim.setServoPosition (1, 0)
+}
+
+void MoveServo (int distance){
+  
+  mappedValue = map (distance, 5, 43, 0, 180);
+  prizm.setServoPostition(1,
+}
