@@ -10,9 +10,9 @@ int distance = 0;
 
 void loop() {     // repeat this code in a loop
  distance = prizim.readSonicSensorCM (1);
-  if (distance < 5) {
-    DangerLighr=t();
-    ResetServo();
+  if (distance < 5) {           
+    DangerLighr=t();           // if dictance is less than 5 danger light and resets servo 
+    ResetServo(); 
   }
   else if (distance > 5 & distance < 43) {
   MoveServo (distance)
